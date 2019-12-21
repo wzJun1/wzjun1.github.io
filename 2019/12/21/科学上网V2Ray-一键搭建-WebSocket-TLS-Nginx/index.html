@@ -94,7 +94,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="v2ray,科学上网,翻墙,ss,ssr,搬瓦工," />
 
 
 
@@ -107,13 +107,15 @@
 
 
 
-<meta name="description" content="顺心意">
-<meta property="og:type" content="website">
-<meta property="og:title" content="wzJun">
-<meta property="og:url" content="https:&#x2F;&#x2F;wzjun.me&#x2F;archives&#x2F;index.html">
+<meta name="description" content="前言最近喵帕斯的服务有点不太稳定，卡顿严重，于是自己搞了一台谷歌云的服务器挂V2Ray来FQ，毕竟程序员的工作离不开Google 准备  海外服务器一台 域名一枚 V2Ray 宝塔面板   安装1.安装宝塔请到 https:&#x2F;&#x2F;www.bt.cn&#x2F; 官网自己安装一键脚本 安装完成后记得安装Nginx 别装Apache  然后自己解析一个二级域名上来，添加一个网站 2.安装V2Ray使用233的一">
+<meta name="keywords" content="v2ray,科学上网,翻墙,ss,ssr,搬瓦工">
+<meta property="og:type" content="article">
+<meta property="og:title" content="科学上网V2Ray 一键搭建 + WebSocket + TLS + Nginx">
+<meta property="og:url" content="https:&#x2F;&#x2F;wzjun.me&#x2F;2019&#x2F;12&#x2F;21&#x2F;%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91V2Ray-%E4%B8%80%E9%94%AE%E6%90%AD%E5%BB%BA-WebSocket-TLS-Nginx&#x2F;index.html">
 <meta property="og:site_name" content="wzJun">
-<meta property="og:description" content="顺心意">
+<meta property="og:description" content="前言最近喵帕斯的服务有点不太稳定，卡顿严重，于是自己搞了一台谷歌云的服务器挂V2Ray来FQ，毕竟程序员的工作离不开Google 准备  海外服务器一台 域名一枚 V2Ray 宝塔面板   安装1.安装宝塔请到 https:&#x2F;&#x2F;www.bt.cn&#x2F; 官网自己安装一键脚本 安装完成后记得安装Nginx 别装Apache  然后自己解析一个二级域名上来，添加一个网站 2.安装V2Ray使用233的一">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-12-21T13:30:00.310Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -144,13 +146,13 @@
 
 
 
-  <link rel="canonical" href="https://wzjun.me/archives/"/>
+  <link rel="canonical" href="https://wzjun.me/2019/12/21/科学上网V2Ray-一键搭建-WebSocket-TLS-Nginx/"/>
 
 
 
 
 
-  <title>归档 | wzJun</title>
+  <title>科学上网V2Ray 一键搭建 + WebSocket + TLS + Nginx | wzJun</title>
   
 
 
@@ -169,7 +171,7 @@
     
   
 
-  <div class="container sidebar-position-right page-archive">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -287,148 +289,275 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wzjun.me/2019/12/21/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91V2Ray-%E4%B8%80%E9%94%AE%E6%90%AD%E5%BB%BA-WebSocket-TLS-Nginx/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wzJun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/52230047">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wzJun">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">科学上网V2Ray 一键搭建 + WebSocket + TLS + Nginx</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-21T21:01:44+08:00">
+                2019-12-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 3 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index">
+                    <span itemprop="name">其他技术</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
 
-        
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/12/21/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91V2Ray-%E4%B8%80%E9%94%AE%E6%90%AD%E5%BB%BA-WebSocket-TLS-Nginx/" itemprop="url">
-              
-                <span itemprop="name">科学上网V2Ray 一键搭建 + WebSocket + TLS + Nginx</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-12-21T21:01:44+08:00"
-              content="2019-12-21" >
-          12-21
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/11/21/hexo_blog_init/" itemprop="url">
-              
-                <span itemprop="name">记录博客的诞生方式及一些问题</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-11-21T16:50:13+08:00"
-              content="2019-11-21" >
-          11-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/11/20/hello-world/" itemprop="url">
-              
-                <span itemprop="name">第一篇博客</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-11-20T20:41:14+08:00"
-              content="2019-11-20" >
-          11-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
+        <hr>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近喵帕斯的服务有点不太稳定，卡顿严重，于是自己搞了一台谷歌云的服务器挂V2Ray来FQ，毕竟程序员的工作离不开Google</p>
+<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><blockquote>
+<ul>
+<li><code>海外服务器一台</code></li>
+<li><code>域名一枚</code></li>
+<li><code>V2Ray</code></li>
+<li><code>宝塔面板</code></li>
+</ul>
+</blockquote>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="1-安装宝塔"><a href="#1-安装宝塔" class="headerlink" title="1.安装宝塔"></a>1.安装宝塔</h2><p>请到 <a href="https://www.bt.cn/" target="_blank" rel="noopener">https://www.bt.cn/</a> 官网自己安装一键脚本</p>
+<p>安装完成后记得安装Nginx 别装Apache </p>
+<p>然后自己解析一个二级域名上来，添加一个网站</p>
+<h2 id="2-安装V2Ray"><a href="#2-安装V2Ray" class="headerlink" title="2.安装V2Ray"></a>2.安装V2Ray</h2><p>使用233的一键脚本安装</p>
+<figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(curl -s -L https://git.io/v2ray.sh)</span><br></pre></td></tr></table></figure>
 
+<blockquote>
+<p>如果提示 <code>curl: command not found</code>，那是因为你的 VPS 没装 Curl<br><code>ubuntu/debian</code> 安装 <code>Curl</code>:<code>apt-get update -y &amp;&amp; apt-get install curl -y</code><br><code>centos</code> 安装 <code>Curl</code>: <code>yum update -y &amp;&amp; yum install curl -y</code></p>
+</blockquote>
+<p>然后选择安装，即是输入 1 回车<br>选择传输协议，输入4 即选择 <code>WebSocket + TLS</code></p>
+<p>然后会出现 <code>安装 Caddy 来实现 自动配置 TLS</code><br>选N 不安装Caddy 不自动配置 我们后面手动配置</p>
+<p>是否配置 Shadowsocks ，如果不需要就直接回车，否则就输入 Y 回车</p>
+<p>中间还要输入之前绑定的域名之类的，这里没有截图，自己看下</p>
+<p>安装信息如果确保没有什么问题了，按回车继续</p>
+<p>安装完成后 命令行输入 <code>v2ray infolink</code> 会给你一个V2Ray的客户端链接，保存</p>
+<p>然后到宝塔里网站配置，添加一个反向代理，高级配置默认目录为/</p>
+<p>目标URL为<a href="http://127.0.0.1:你的V2Ray端口" target="_blank" rel="noopener">http://127.0.0.1:你的V2Ray端口</a> 提交</p>
+<p>然后在反向代理配置文件中，添加</p>
+<figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">proxy_http_version         1.1;</span><br><span class="line">proxy_set_header Upgrade   $http_upgrade;</span><br><span class="line">proxy_set_header Connection "upgrade";</span><br></pre></td></tr></table></figure>
+
+<p>如果看不懂，就看傻瓜式的说了一大堆的乱七八糟的文档系列：</p>
+<p><a href="https://233v2.com/post/17/" target="_blank" rel="noopener">https://233v2.com/post/17/</a></p>
+<p><a href="https://toutyrater.github.io/" target="_blank" rel="noopener">https://toutyrater.github.io/</a></p>
+<p><a href="https://liubing.me/v2ray-websocket-tl-nginx-cloudflare-bandwagonhost.html" target="_blank" rel="noopener">https://liubing.me/v2ray-websocket-tl-nginx-cloudflare-bandwagonhost.html</a></p>
+<h1 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h1><p>然后使用客户端连接之前保存的V2Ray的链接</p>
+<h1 id="快速管理-V2Ray"><a href="#快速管理-V2Ray" class="headerlink" title="快速管理 V2Ray"></a>快速管理 V2Ray</h1><figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">v2ray info 查看 V2Ray 配置信息</span><br><span class="line">v2ray config 修改 V2Ray 配置</span><br><span class="line">v2ray link 生成 V2Ray 配置文件链接</span><br><span class="line">v2ray infolink 生成 V2Ray 配置信息链接</span><br><span class="line">v2ray qr 生成 V2Ray 配置二维码链接</span><br><span class="line">v2ray ss 修改 Shadowsocks 配置</span><br><span class="line">v2ray ssinfo 查看 Shadowsocks 配置信息</span><br><span class="line">v2ray ssqr 生成 Shadowsocks 配置二维码链接</span><br><span class="line">v2ray status 查看 V2Ray 运行状态</span><br><span class="line">v2ray start 启动 V2Ray</span><br><span class="line">v2ray stop 停止 V2Ray</span><br><span class="line">v2ray restart 重启 V2Ray</span><br><span class="line">v2ray log 查看 V2Ray 运行日志</span><br><span class="line">v2ray update 更新 V2Ray</span><br><span class="line">v2ray update.sh 更新 V2Ray 管理脚本</span><br><span class="line">v2ray uninstall 卸载 V2Ray</span><br></pre></td></tr></table></figure>
+      
     </div>
+    
+    
+    
+
+    <div>
+        
+            
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+
+  <p><span>本文标题:</span>科学上网V2Ray 一键搭建 + WebSocket + TLS + Nginx</a></p>
+  <p><span>文章作者:</span>
+
+  
+  wzJun
+  
+
+
+  </a></p>
+  <p><span>发布时间:</span>2019年12月21日 - 21:01:44</p>
+  <p><span>最后更新:</span>2019年12月21日 - 21:30:00</p>
+  <p><span>原始链接:</span>
+
+    
+
+    <a href="/2019/12/21/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91V2Ray-%E4%B8%80%E9%94%AE%E6%90%AD%E5%BB%BA-WebSocket-TLS-Nginx/" title="科学上网V2Ray 一键搭建 + WebSocket + TLS + Nginx">https://wzjun.me/2019/12/21/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91V2Ray-%E4%B8%80%E9%94%AE%E6%90%AD%E5%BB%BA-WebSocket-TLS-Nginx/</a>
+        <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://wzjun.me/2019/12/21/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91V2Ray-%E4%B8%80%E9%94%AE%E6%90%AD%E5%BB%BA-WebSocket-TLS-Nginx/"  aria-label="复制成功！"></i></span>
+
+    
+
+
+
+
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>
+</div>
+<script>
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({
+          title: "",
+          text: '复制成功',
+          html: false,
+          timer: 500,
+          showConfirmButton: false
+        });
+      });
+    }));
+</script>
+
+
+        
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/v2ray/" rel="tag"># v2ray</a>
+          
+            <a href="/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" rel="tag"># 科学上网</a>
+          
+            <a href="/tags/%E7%BF%BB%E5%A2%99/" rel="tag"># 翻墙</a>
+          
+            <a href="/tags/ss/" rel="tag"># ss</a>
+          
+            <a href="/tags/ssr/" rel="tag"># ssr</a>
+          
+            <a href="/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/" rel="tag"># 搬瓦工</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/21/hexo_blog_init/" rel="next" title="记录博客的诞生方式及一些问题">
+                <i class="fa fa-chevron-left"></i> 记录博客的诞生方式及一些问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -436,6 +565,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NzYzMi8yNDEzMA=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -456,8 +594,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -598,6 +745,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备"><span class="nav-number">1.1.</span> <span class="nav-text">准备</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-安装宝塔"><span class="nav-number">2.1.</span> <span class="nav-text">1.安装宝塔</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-安装V2Ray"><span class="nav-number">2.2.</span> <span class="nav-text">2.安装V2Ray</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#完成"><span class="nav-number">3.</span> <span class="nav-text">完成</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#快速管理-V2Ray"><span class="nav-number">4.</span> <span class="nav-text">快速管理 V2Ray</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -737,6 +900,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -765,6 +932,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
