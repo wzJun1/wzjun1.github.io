@@ -4,41 +4,6 @@
   
     
     <entry>
-      <title>科学上网V2Ray 一键搭建 + WebSocket + TLS + Nginx</title>
-      <link href="/2019/12/21/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91V2Ray-%E4%B8%80%E9%94%AE%E6%90%AD%E5%BB%BA-WebSocket-TLS-Nginx/"/>
-      <url>/2019/12/21/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91V2Ray-%E4%B8%80%E9%94%AE%E6%90%AD%E5%BB%BA-WebSocket-TLS-Nginx/</url>
-      
-        <content type="html"><![CDATA[<hr><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近喵帕斯的服务有点不太稳定，卡顿严重，于是自己搞了一台谷歌云的服务器挂V2Ray来FQ，毕竟程序员的工作离不开Google</p><h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><blockquote><ul><li><code>海外服务器一台</code></li><li><code>域名一枚</code></li><li><code>V2Ray</code></li><li><code>宝塔面板</code></li></ul></blockquote><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="1-安装宝塔"><a href="#1-安装宝塔" class="headerlink" title="1.安装宝塔"></a>1.安装宝塔</h2><p>请到 <a href="https://www.bt.cn/" target="_blank" rel="noopener">https://www.bt.cn/</a> 官网自己安装一键脚本</p><p>安装完成后记得安装Nginx 别装Apache </p><p>然后自己解析一个二级域名上来，添加一个网站</p><h2 id="2-安装V2Ray"><a href="#2-安装V2Ray" class="headerlink" title="2.安装V2Ray"></a>2.安装V2Ray</h2><p>使用233的一键脚本安装</p><figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(curl -s -L https://git.io/v2ray.sh)</span><br></pre></td></tr></table></figure><blockquote><p>如果提示 <code>curl: command not found</code>，那是因为你的 VPS 没装 Curl<br><code>ubuntu/debian</code> 安装 <code>Curl</code>:<code>apt-get update -y &amp;&amp; apt-get install curl -y</code><br><code>centos</code> 安装 <code>Curl</code>: <code>yum update -y &amp;&amp; yum install curl -y</code></p></blockquote><p>然后选择安装，即是输入 1 回车<br>选择传输协议，输入4 即选择 <code>WebSocket + TLS</code></p><p>然后会出现 <code>安装 Caddy 来实现 自动配置 TLS</code><br>选N 不安装Caddy 不自动配置 我们后面手动配置</p><p>是否配置 Shadowsocks ，如果不需要就直接回车，否则就输入 Y 回车</p><p>中间还要输入之前绑定的域名之类的，这里没有截图，自己看下</p><p>安装信息如果确保没有什么问题了，按回车继续</p><p>安装完成后 命令行输入 <code>v2ray infolink</code> 会给你一个V2Ray的客户端链接，保存</p><p>然后到宝塔里网站配置，添加一个反向代理，高级配置默认目录为/</p><p>目标URL为<a href="http://127.0.0.1:你的V2Ray端口" target="_blank" rel="noopener">http://127.0.0.1:你的V2Ray端口</a> 提交</p><p>然后在反向代理配置文件中，添加</p><figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">proxy_http_version         1.1;</span><br><span class="line">proxy_set_header Upgrade   $http_upgrade;</span><br><span class="line">proxy_set_header Connection "upgrade";</span><br></pre></td></tr></table></figure><p>如果看不懂，就看傻瓜式的说了一大堆的乱七八糟的文档系列：</p><p><a href="https://233v2.com/post/17/" target="_blank" rel="noopener">https://233v2.com/post/17/</a></p><p><a href="https://toutyrater.github.io/" target="_blank" rel="noopener">https://toutyrater.github.io/</a></p><p><a href="https://liubing.me/v2ray-websocket-tl-nginx-cloudflare-bandwagonhost.html" target="_blank" rel="noopener">https://liubing.me/v2ray-websocket-tl-nginx-cloudflare-bandwagonhost.html</a></p><h1 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h1><p>然后使用客户端连接之前保存的V2Ray的链接</p><h1 id="快速管理-V2Ray"><a href="#快速管理-V2Ray" class="headerlink" title="快速管理 V2Ray"></a>快速管理 V2Ray</h1><figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">v2ray info 查看 V2Ray 配置信息</span><br><span class="line">v2ray config 修改 V2Ray 配置</span><br><span class="line">v2ray link 生成 V2Ray 配置文件链接</span><br><span class="line">v2ray infolink 生成 V2Ray 配置信息链接</span><br><span class="line">v2ray qr 生成 V2Ray 配置二维码链接</span><br><span class="line">v2ray ss 修改 Shadowsocks 配置</span><br><span class="line">v2ray ssinfo 查看 Shadowsocks 配置信息</span><br><span class="line">v2ray ssqr 生成 Shadowsocks 配置二维码链接</span><br><span class="line">v2ray status 查看 V2Ray 运行状态</span><br><span class="line">v2ray start 启动 V2Ray</span><br><span class="line">v2ray stop 停止 V2Ray</span><br><span class="line">v2ray restart 重启 V2Ray</span><br><span class="line">v2ray log 查看 V2Ray 运行日志</span><br><span class="line">v2ray update 更新 V2Ray</span><br><span class="line">v2ray update.sh 更新 V2Ray 管理脚本</span><br><span class="line">v2ray uninstall 卸载 V2Ray</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> 其他技术 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> v2ray </tag>
-            
-            <tag> 科学上网 </tag>
-            
-            <tag> 翻墙 </tag>
-            
-            <tag> ss </tag>
-            
-            <tag> ssr </tag>
-            
-            <tag> 搬瓦工 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>记录博客的诞生方式及一些问题</title>
       <link href="/2019/11/21/hexo_blog_init/"/>
       <url>/2019/11/21/hexo_blog_init/</url>
