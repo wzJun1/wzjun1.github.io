@@ -389,6 +389,145 @@
 							"body": "{\n    \"code\": 200,\n    \"message\": \"success\",\n    \"data\": null\n}"
 						}
 					]
+				},
+				{
+					"name": "获取黑名单列表",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/user/black/list",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								"black",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "添加黑名单",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"members\": [\n        \"user2\",\n        \"user3\" //添加的用户ID列表\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/user/black/add",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								"black",
+								"add"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "添加黑名单",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"members\": [\n        \"user2\",\n        \"user3\" //添加的用户ID列表\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/user/black/add",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"user",
+										"black",
+										"add"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "移出黑名单",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"members\": [ \n        \"user3\"  \n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/user/black/remove",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								"black",
+								"remove"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "移出黑名单",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"members\": [ \n        \"user3\"  \n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/user/black/remove",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"user",
+										"black",
+										"remove"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
 				}
 			]
 		},
@@ -2205,13 +2344,13 @@
 							"formdata": [
 								{
 									"key": "page",
-									"value": "1",
+									"value": "2",
 									"description": "页码",
 									"type": "text"
 								},
 								{
 									"key": "conversationId",
-									"value": "user2",
+									"value": "group1",
 									"description": "会话ID",
 									"type": "text"
 								}
